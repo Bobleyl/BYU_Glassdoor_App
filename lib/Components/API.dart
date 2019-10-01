@@ -31,7 +31,7 @@ Future<String> createData(String url, Data body) async {
   String jsonStr = jsonEncode(body.toJson());
   print("String to send: ");
   print(jsonStr);
-  return http.put(url, body: jsonStr, headers: { "Content-Type" : "application/json", "charset": "utf-8" }).then((http.Response response) {
+  return http.post(url, body: jsonStr, headers: { "Content-Type" : "application/json", "charset": "utf-8" }).then((http.Response response) {
     final int statusCode = response.statusCode;
     print(response);
     print(statusCode);

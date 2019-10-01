@@ -1,10 +1,10 @@
 class Data {
   String ItemID;
-  String Company;
-  String Salary;
-  String Bonus;
-  String State;
-  String Year;
+  String Company = "No Company";
+  String Salary = "0";
+  String Bonus = "0";
+  String State = "No Location";
+  String Year = "No Year";
 
   Data({
     this.ItemID,
