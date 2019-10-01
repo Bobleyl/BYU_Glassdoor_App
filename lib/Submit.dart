@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Components/API.dart';
-import 'Model/Data.dart';
+import 'package:byu_glassdoor_app/API.dart';
+import 'package:byu_glassdoor_app/Data.dart';
 import 'package:random_string/random_string.dart';
-import 'Components/Alerts.dart';
+import 'package:byu_glassdoor_app/Alerts.dart';
 
 class Submit extends StatefulWidget {
   Submit();

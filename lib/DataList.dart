@@ -1,4 +1,4 @@
-import 'Data.dart';
+import 'package:byu_glassdoor_app/Data.dart';
 
 class DataList {
   List<Data> dataItem;

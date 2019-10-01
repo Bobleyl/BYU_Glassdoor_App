@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
-import '../Model/DataList.dart';
-import '../Model/Data.dart';
+import 'package:byu_glassdoor_app/DataList.dart';
+import 'package:byu_glassdoor_app/Data.dart';
 
 Future<DataList> getDataList(String url){
   print(url);

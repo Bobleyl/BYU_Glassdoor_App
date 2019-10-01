@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Submit.dart';
 import 'Reports.dart';
-import 'Data.dart';
+import 'DataScreen.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen();
@@ -43,7 +43,7 @@ class MainScreenState extends State<MainScreen> {
               body: TabBarView(
                 children: [
                   Submit(),
-                  Data(),
+                  DataScreen(),
                   Reports(),
                 ],
               ),
