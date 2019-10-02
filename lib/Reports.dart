@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'API.dart';
+import 'DataList.dart';
+import 'Data.dart';
 import 'PlotData.dart';
 
 class Reports extends StatefulWidget {
@@ -12,6 +15,30 @@ class ReportsState extends State<Reports> {
   ReportsState();
 
   int _counter = 0;
+  var data = [
+    new PlotData("Internship", 50000, Colors.red),
+  ];
+
+  @override
+  initState(){
+    method() async {
+      DataList a = await getDataList("https://hwp1z9mnyk.execute-api.us-east-1.amazonaws.com/dev/glass/get");
+      if(a != null){
+        for(Data value in a.dataItem){
+          PlotData temp;
+          if(value.Status == "Internship"){
+            temp = new PlotData(value.Status, int.parse(value.Salary), Colors.red);
+          }else{
+            temp = new PlotData(value.Status, int.parse(value.Salary), Colors.yellow);
+          }
+          data.add(temp);
+          print("Added Value");
+          setState(() {});
+        }
+      }
+    }
+    method();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -22,12 +49,6 @@ class ReportsState extends State<Reports> {
   Widget build(BuildContext context) {
 //    MediaQueryData mq;
 //    mq = MediaQuery.of(context);
-
-    var data = [
-      new PlotData('2016', 12, Colors.red),
-      new PlotData('2017', 42, Colors.yellow),
-      new PlotData('2018', 27, Colors.green),
-    ];
 
     var series = [
       new charts.Series(
@@ -58,6 +79,13 @@ class ReportsState extends State<Reports> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RichText(
+              text: TextSpan(
+                text: "Average pay",
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
             chartWidget,
           ],
         ),
