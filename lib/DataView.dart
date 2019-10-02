@@ -11,6 +11,16 @@ class DataView extends StatefulWidget {
 class DataViewState extends State<DataView> {
   DataViewState(this.data);
   Data data;
+  var bg;
+
+  @override
+  initState(){
+    if(data.Status == "Internship"){
+      bg = Colors.white;
+    }else{
+      bg = Colors.red;
+    }
+  }
 
   Widget build(BuildContext context) {
     MediaQueryData mq;
@@ -29,7 +39,7 @@ class DataViewState extends State<DataView> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30.0),
                 border: Border.all(color: Colors.white),
-                color: Theme.of(context).accentColor,
+                color: bg,
               ),
               height: 65.0,
               width: MediaQuery.of(context).size.width/1.05,
