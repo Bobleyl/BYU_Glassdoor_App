@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'MainScreen.dart';
+import 'SplashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xffffffff),
         fontFamily: 'Raleway',
       ),
-      home: MainScreen(),
+      home: SplashScreen(),
     );
   }
 }

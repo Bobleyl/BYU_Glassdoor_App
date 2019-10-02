@@ -17,6 +17,15 @@ class DataScreenState extends State<DataScreen> {
 
   var URL = "https://hwp1z9mnyk.execute-api.us-east-1.amazonaws.com/dev/glass/get";
 
+  String valueOption;
+  List<String> valueOptions = [
+    "Best Offers",
+    "Internships",
+    "FullTime Offers",
+    "In-State Offers",
+    "Tech Companies",
+  ];
+
   Widget build(BuildContext context) {
     MediaQueryData mq;
     mq = MediaQuery.of(context);
@@ -86,16 +95,84 @@ class DataScreenState extends State<DataScreen> {
       ),
     );
 
+    Widget popUp(){
+      TextStyle style = TextStyle(fontFamily: 'Raleway-Regular', fontSize: 15.0);
+
+      return new Container(
+        margin: EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.fromLTRB(8, 0, 8 ,0),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10)
+        ),
+        width: mq.size.width,
+        child: DropdownButton<String>(
+          value: valueOption,
+          onChanged: (String newValue) {
+            setState(() {
+              valueOption = newValue;
+            });
+          },
+          style: style.copyWith(color: Colors.black),
+          hint: Text("Filters"),
+          items: valueOptions.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Offers", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+        title: Text("Offers", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: new Text(
+                  "Filter Data",
+                  textAlign: TextAlign.center,
+                ),
+                content: popUp(),
+                actions: <Widget>[
+                  new MaterialButton(
+                    child: new Text("Save"),
+                    color: Colors.black,
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).pop();
+                      });
+                    },
+                  ),
+                  new MaterialButton(
+                    child: new Text("Close"),
+                    color: Colors.black,
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).pop();
+                      });
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        child: Icon(Icons.assignment, color: Colors.white,),
       ),
       body: Container(
         color: Theme.of(context).primaryColor,
         child: Column(
           children: <Widget>[
             topBar,
+            SizedBox(height: mq.size.height/100),
             Flexible(
               flex: 19,
               child: FutureBuilder<DataList>(
