@@ -84,7 +84,17 @@ class DataViewState extends State<DataView> {
                           ],
                         ),
                       ),
-
+                      SizedBox(width: mq.size.height/60),
+                      Flexible(
+                        flex: 10,
+                        child: RichText(
+                          text: TextSpan(
+                            text: data.Year,
+                            style: TextStyle(fontSize: 15.0, color: Colors.black),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      )
                     ],
                   ),
                 ],

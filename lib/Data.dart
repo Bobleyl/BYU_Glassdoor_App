@@ -6,6 +6,7 @@ class Data {
   String Status = "Internship";
   String State = "No Location";
   String Year = "No Year";
+  String Major = "No Major";
 
   Data({
     this.ItemID,
@@ -15,6 +16,7 @@ class Data {
     this.Status,
     this.State,
     this.Year,
+    this.Major,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class Data {
       Status: json['Status'] as String,
       State: json['State'] as String,
       Year: json['Year'] as String,
+      Major: json['Major'] as String,
     );
   }
 
@@ -38,6 +41,7 @@ class Data {
       'Status': this.Status,
       'State': this.State,
       'Year': this.Year,
+      'Major': this.Major,
     };
   }
 }

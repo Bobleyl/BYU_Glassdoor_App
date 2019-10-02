@@ -20,6 +20,7 @@ class SubmitState extends State<Submit> {
 
   var companyNameController = new TextEditingController();
   var salaryController = new TextEditingController();
+  var majorController = new TextEditingController();
   var bonusController = new TextEditingController();
   var stateController = new TextEditingController();
   var yearController = new TextEditingController();
@@ -37,6 +38,7 @@ class SubmitState extends State<Submit> {
   String schoolYear;
   List<String> schoolYears = [
     "Alum",
+    "Grad Student",
     "Senior",
     "Junior",
     "Sophomore",
@@ -181,6 +183,23 @@ class SubmitState extends State<Submit> {
       ),
     );
 
+    var dataMajor = new Container(
+      margin: EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.fromLTRB(8, 0, 8 ,0),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10)
+      ),
+      child: TextField(
+        keyboardType: TextInputType.numberWithOptions(),
+        controller: majorController,
+        decoration: InputDecoration(
+            hintText: "Major Studied",
+            border: InputBorder.none
+        ),
+      ),
+    );
+
     var dataBonus = new Container(
       margin: EdgeInsets.symmetric(vertical: 8),
       padding: EdgeInsets.fromLTRB(8, 0, 8 ,0),
@@ -242,6 +261,10 @@ class SubmitState extends State<Submit> {
           var bonus = bonusController.text;
           var state = stateController.text;
           var year = schoolYear;
+          var major = majorController.text;
+          if(majorController == ""){
+            major = "No Major Given";
+          }
           if(statusOption == null){
             status = "No Status Given";
           }
@@ -263,7 +286,7 @@ class SubmitState extends State<Submit> {
           if(schoolYear == ""){
             year = "No Year";
           }
-          Data temp = new Data(ItemID: randomAlpha(5), Company: company, Salary: salary, Bonus: bonus, Status: status, State: state, Year: year);
+          Data temp = new Data(ItemID: randomAlpha(5), Company: company, Salary: salary, Bonus: bonus, Status: status, State: state, Year: year, Major: major);
           var a = await createData(URL, temp);
           if (a != null){
             print("Success");
@@ -289,6 +312,7 @@ class SubmitState extends State<Submit> {
             dataBonus,
             dataState,
             dataYear,
+            dataMajor,
             addDataButton,
           ],
         ),
