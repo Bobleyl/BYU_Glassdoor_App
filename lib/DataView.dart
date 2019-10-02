@@ -32,7 +32,7 @@ class DataViewState extends State<DataView> {
                 color: Theme.of(context).accentColor,
               ),
               height: 65.0,
-              width: MediaQuery.of(context).size.width/1.2,
+              width: MediaQuery.of(context).size.width/1.05,
               child: Column(
                 children: <Widget>[
                   SizedBox(
@@ -46,28 +46,35 @@ class DataViewState extends State<DataView> {
                         child: RichText(
                           text: TextSpan(
                             text: data.Company,
-                            style: TextStyle(fontSize: 25.0, color: Colors.black),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: mq.size.height/60),
-                      RichText(
-                        text: TextSpan(
-                          text: "-",
-                          style: TextStyle(fontSize: 25.0, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(width: mq.size.height/60),
-                      Flexible(
-                        flex: 10,
-                        child: RichText(
-                          text: TextSpan(
-                            text: data.Salary,
-                            style: TextStyle(fontSize: 25.0, color: Colors.black),
+                            style: TextStyle(fontSize: 20.0, color: Colors.black),
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
+                      SizedBox(width: mq.size.height/60),
+                      Flexible(
+                        flex: 20,
+                        child: Column(
+                          children: <Widget>[
+                              RichText(
+                                text: TextSpan(
+                                  text: "Salary: \$" + data.Salary,
+                                  style: TextStyle(fontSize: 15.0, color: Colors.black),
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(width: mq.size.height/60),
+                              RichText(
+                                text: TextSpan(
+                                  text: "Bonus: \$" + data.Bonus,
+                                  style: TextStyle(fontSize: 15.0, color: Colors.black),
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                          ],
+                        ),
+                      ),
+
                     ],
                   ),
                 ],

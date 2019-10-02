@@ -3,6 +3,7 @@ class Data {
   String Company = "No Company";
   String Salary = "0";
   String Bonus = "0";
+  String Status = "Internship";
   String State = "No Location";
   String Year = "No Year";
 
@@ -11,6 +12,7 @@ class Data {
     this.Company,
     this.Salary,
     this.Bonus,
+    this.Status,
     this.State,
     this.Year,
   });
@@ -21,6 +23,7 @@ class Data {
       Company: json['Company'] as String,
       Salary: json['Salary'] as String,
       Bonus: json['Bonus'] as String,
+      Status: json['Status'] as String,
       State: json['State'] as String,
       Year: json['Year'] as String,
     );
@@ -32,6 +35,7 @@ class Data {
       'Company': this.Company,
       'Salary': this.Salary,
       'Bonus': this.Bonus,
+      'Status': this.Status,
       'State': this.State,
       'Year': this.Year,
     };

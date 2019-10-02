@@ -23,7 +23,7 @@ class DataScreenState extends State<DataScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Data", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+        title: Text("Offers", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
       ),
       body: Container(
         color: Theme.of(context).primaryColor,
