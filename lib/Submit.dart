@@ -75,7 +75,7 @@ class SubmitState extends State<Submit> {
               borderRadius: BorderRadius.circular(10)
           ),
           child: TextField(
-            keyboardType: TextInputType.numberWithOptions(),
+            keyboardType: TextInputType.numberWithOptions(decimal: true, signed: true),
             controller: salaryController,
             decoration: InputDecoration(
                 hintText: "Salary Per Hour",
@@ -92,7 +92,7 @@ class SubmitState extends State<Submit> {
               borderRadius: BorderRadius.circular(10)
           ),
           child: TextField(
-            keyboardType: TextInputType.numberWithOptions(),
+            keyboardType: TextInputType.numberWithOptions(decimal: true, signed: true),
             controller: salaryController,
             decoration: InputDecoration(
                 hintText: "Base Salary",
@@ -191,7 +191,6 @@ class SubmitState extends State<Submit> {
           borderRadius: BorderRadius.circular(10)
       ),
       child: TextField(
-        keyboardType: TextInputType.numberWithOptions(),
         controller: majorController,
         decoration: InputDecoration(
             hintText: "Major Studied",
@@ -208,7 +207,7 @@ class SubmitState extends State<Submit> {
           borderRadius: BorderRadius.circular(10)
       ),
       child: TextField(
-        keyboardType: TextInputType.numberWithOptions(),
+        keyboardType: TextInputType.numberWithOptions(decimal: true, signed: true),
         controller: bonusController,
         decoration: InputDecoration(
             hintText: "Bonus Salary + Stock Value",
@@ -250,7 +249,7 @@ class SubmitState extends State<Submit> {
           var salary;
           if(salaryOption == "Hourly"){
             var temp = salaryController.text;
-            var value = int.parse(temp);
+            var value = double.parse(temp);
             value = value * 50 * 40;
             salary = value.toString();
           }else{
@@ -262,7 +261,7 @@ class SubmitState extends State<Submit> {
           var state = stateController.text;
           var year = schoolYear;
           var major = majorController.text;
-          if(majorController == ""){
+          if(majorController.text == ""){
             major = "No Major Given";
           }
           if(statusOption == null){
@@ -303,18 +302,25 @@ class SubmitState extends State<Submit> {
       body: Container(
         color: Theme.of(context).primaryColor.withOpacity(.7),
         padding: EdgeInsets.all(12),
-        child: Column(
-          children: <Widget>[
-            dataCompany,
-            InternFullTime,
-            HourlySalary,
-            chooseSalary(),
-            dataBonus,
-            dataState,
-            dataYear,
-            dataMajor,
-            addDataButton,
-          ],
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: mq.size.height,
+            ),
+            child: Column(
+              children: <Widget>[
+                dataCompany,
+                InternFullTime,
+                HourlySalary,
+                chooseSalary(),
+                dataBonus,
+                dataState,
+                dataYear,
+                dataMajor,
+                addDataButton,
+              ],
+            ),
+          ),
         ),
       ),
     );
