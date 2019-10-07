@@ -37,7 +37,7 @@ class DataViewState extends State<DataView> {
             ),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(25),
                 border: Border.all(color: Colors.white),
                 color: bg,
               ),

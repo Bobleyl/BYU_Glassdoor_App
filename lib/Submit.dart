@@ -14,7 +14,7 @@ class Submit extends StatefulWidget {
 class SubmitState extends State<Submit> {
   SubmitState();
 
-  var URL = "https://hwp1z9mnyk.execute-api.us-east-1.amazonaws.com/dev/glass";
+  var URL = "https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass";
   final number = ['1','2','3','4','5','6','7','8','9','0'];
   String previous = "";
 

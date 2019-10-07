@@ -15,7 +15,7 @@ class DataScreen extends StatefulWidget {
 class DataScreenState extends State<DataScreen> {
   DataScreenState();
 
-  var URL = "https://hwp1z9mnyk.execute-api.us-east-1.amazonaws.com/dev/glass/get";
+  var URL = "https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass/get";
 
   String valueOption;
   List<String> valueOptions = [
@@ -42,7 +42,7 @@ class DataScreenState extends State<DataScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(25.0),
                 border: Border.all(color: Colors.white),
                 color: Colors.white,
               ),

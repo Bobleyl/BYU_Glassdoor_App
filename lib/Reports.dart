@@ -22,7 +22,7 @@ class ReportsState extends State<Reports> {
   @override
   initState(){
     method() async {
-      DataList a = await getDataList("https://hwp1z9mnyk.execute-api.us-east-1.amazonaws.com/dev/glass/get");
+      DataList a = await getDataList("https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass/get");
       if(a != null){
         for(Data value in a.dataItem){
           PlotData temp;
