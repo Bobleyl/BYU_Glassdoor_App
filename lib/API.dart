@@ -29,6 +29,7 @@ Future<DataList> getDataList(String url){
 
 Future<String> createData(String url, Data body) async {
   String jsonStr = jsonEncode(body.toJson());
+  print(url);
   print("String to send: ");
   print(jsonStr);
   return http.post(url, body: jsonStr, headers: { "Content-Type" : "application/json", "charset": "utf-8" }).then((http.Response response) {
