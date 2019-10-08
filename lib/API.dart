@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:byu_glassdoor_app/DataList.dart';
 import 'package:byu_glassdoor_app/Data.dart';
 
-Future<DataList> getDataList(String url){
+Future<DataList> getDataList(String url, String valueOption){
   print(url);
   return http.get(url, headers: { "Content-Type" : "application/json", "charset": "utf-8" }).then((http.Response response) {
     final int statusCode = response.statusCode;
@@ -22,7 +22,13 @@ Future<DataList> getDataList(String url){
     if(data == null){
       return new DataList();
     }else{
-      return data;
+      if(valueOption == null){
+        print("Base case");
+        return data;
+      }else{
+        print("Value Option: " + valueOption);
+        return data;
+      }
     }
   });
 }

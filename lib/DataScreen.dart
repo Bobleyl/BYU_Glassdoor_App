@@ -31,9 +31,6 @@ class DataScreenState extends State<DataScreen> {
     mq = MediaQuery.of(context);
 
     var topBar = new GestureDetector(
-      onTap: (){
-
-      },
       child: Center(
         child: Column(
           children: <Widget>[
@@ -176,7 +173,7 @@ class DataScreenState extends State<DataScreen> {
             Flexible(
               flex: 19,
               child: FutureBuilder<DataList>(
-                future: getDataList(URL),
+                future: getDataList(URL, valueOption),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     if (snapshot.data.dataItem == null) {
