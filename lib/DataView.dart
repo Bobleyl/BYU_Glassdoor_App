@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:byu_glassdoor_app/Data.dart';
+import 'package:byu_glassdoor_app/OfferDetails.dart';
 
 class DataView extends StatefulWidget {
   DataView(this.data) : super();
@@ -27,7 +28,10 @@ class DataViewState extends State<DataView> {
     mq = MediaQuery.of(context);
     return GestureDetector(
       onTap: (){
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => OfferDetails(data)),
+        );
       },
       child: Center(
         child: Column(

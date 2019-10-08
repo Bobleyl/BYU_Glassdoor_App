@@ -300,7 +300,7 @@ class SubmitState extends State<Submit> {
         title: Text("Upload Offer", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
       ),
       body: Container(
-        color: Theme.of(context).primaryColor.withOpacity(.7),
+        color: Theme.of(context).primaryColor.withOpacity(.9),
         padding: EdgeInsets.all(12),
         child: SingleChildScrollView(
           child: ConstrainedBox(

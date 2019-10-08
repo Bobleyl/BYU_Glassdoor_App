@@ -129,7 +129,7 @@ class DataScreenState extends State<DataScreen> {
       appBar: AppBar(
         title: Text("Offers", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
       ),
-      floatingActionButton: FloatingActionButton(
+      /*floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
             context: context,
@@ -166,9 +166,9 @@ class DataScreenState extends State<DataScreen> {
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.assignment, color: Colors.white,),
-      ),
+      ),*/
       body: Container(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).primaryColor.withOpacity(.9),
         child: Column(
           children: <Widget>[
             topBar,
