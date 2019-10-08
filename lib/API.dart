@@ -19,12 +19,27 @@ Future<DataList> getDataList(String url, String valueOption){
     } catch(e){
       print(e);
     }
+    DataList newData = new DataList();
     if(data == null){
       return new DataList();
     }else{
       if(valueOption == null){
         print("Base case");
         return data;
+      }else if(valueOption == "Internships"){
+        for(Data item in data){
+          if(item.Status == "Internship"){
+            newData.addShift(item);
+          }
+        }
+        return newData;
+      }else if(valueOption == "FullTime Offers"){
+        for(Data item in data){
+          if(item.Status == "Full-Time"){
+            newData.addShift(item);
+          }
+        }
+        return newData;
       }else{
         print("Value Option: " + valueOption);
         return data;
