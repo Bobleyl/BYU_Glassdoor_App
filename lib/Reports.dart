@@ -75,19 +75,22 @@ class ReportsState extends State<Reports> {
       appBar: AppBar(
         title: Text("Graphs", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
       ),
-      body: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RichText(
-              text: TextSpan(
-                text: "Average pay",
-                style: TextStyle(fontSize: 20.0, color: Colors.black),
+      body: new Container(
+        color: Theme.of(context).accentColor,
+        child: Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RichText(
+                text: TextSpan(
+                  text: "Average pay",
+                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
-              overflow: TextOverflow.ellipsis,
-            ),
-            chartWidget,
-          ],
+              chartWidget,
+            ],
+          ),
         ),
       ),
     );

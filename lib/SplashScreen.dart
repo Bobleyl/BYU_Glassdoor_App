@@ -47,7 +47,7 @@ class SplashScreenState extends State<SplashScreen> {
         onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
         child: Center(
           child: Container(
-            color: Theme.of(context).primaryColor.withOpacity(.7),
+            color: Theme.of(context).primaryColor.withOpacity(.9),
             height: double.infinity,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(36.0, 20.0, 36.0, 0.0),
