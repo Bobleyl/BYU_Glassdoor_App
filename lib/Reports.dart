@@ -22,14 +22,14 @@ class ReportsState extends State<Reports> {
   @override
   initState(){
     method() async {
-      DataList a = await getDataList("https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass/get", null);
+      DataList a = await getDataList("https://d23kwuyo38.execute-api.us-east-1.amazonaws.com/production/", null);
       if(a != null){
         for(Data value in a.dataItem){
           PlotData temp;
           if(value.Status == "Internship"){
-            temp = new PlotData(value.Status, int.parse(value.Salary), Colors.red);
+            temp = new PlotData(value.Status, value.Salary, Colors.red);
           }else{
-            temp = new PlotData(value.Status, int.parse(value.Salary), Colors.yellow);
+            temp = new PlotData(value.Status, value.Salary, Colors.yellow);
           }
           data.add(temp);
           print("Added Value");

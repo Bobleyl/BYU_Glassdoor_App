@@ -15,7 +15,7 @@ class OfferDetailsState extends State<OfferDetails> {
   OfferDetailsState(this.data);
   Data data;
 
-  var URL = "https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass";
+  var URL = "https://d23kwuyo38.execute-api.us-east-1.amazonaws.com/production/";
 
   Widget build(BuildContext context) {
     MediaQueryData mq;
@@ -47,7 +47,7 @@ class OfferDetailsState extends State<OfferDetails> {
       width: mq.size.width,
       padding: EdgeInsets.all(12),
       child: Text(
-        'Salary: ' + data.Salary,
+        'Salary: ' + data.Salary.toString(),
         textScaleFactor: 1.0,
         style: TextStyle(
           fontSize: 25.0,
@@ -65,7 +65,7 @@ class OfferDetailsState extends State<OfferDetails> {
       width: mq.size.width,
       padding: EdgeInsets.all(12),
       child: Text(
-        'Bonus: ' + data.Bonus,
+        'Bonus: ' + data.Bonus.toString(),
         textScaleFactor: 1.0,
         style: TextStyle(
           fontSize: 25.0,

@@ -1,8 +1,8 @@
 class Data {
-  String ItemID;
+  int ItemID;
   String Company = "No Company";
-  String Salary = "0";
-  String Bonus = "0";
+  int Salary = 0;
+  int Bonus = 0;
   String Status = "Internship";
   String State = "No Location";
   String Year = "No Year";
@@ -21,10 +21,10 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
-      ItemID: json['ItemID'] as String,
+      ItemID: json['ItemID'] as int,
       Company: json['Company'] as String,
-      Salary: json['Salary'] as String,
-      Bonus: json['Bonus'] as String,
+      Salary: json['Salary'] as int,
+      Bonus: json['Bonus'] as int,
       Status: json['Status'] as String,
       State: json['State'] as String,
       Year: json['Year'] as String,

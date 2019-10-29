@@ -14,7 +14,7 @@ class Submit extends StatefulWidget {
 class SubmitState extends State<Submit> {
   SubmitState();
 
-  var URL = "https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass";
+  var URL = "https://d23kwuyo38.execute-api.us-east-1.amazonaws.com/production";
   final number = ['1','2','3','4','5','6','7','8','9','0'];
   String previous = "";
 
@@ -253,11 +253,11 @@ class SubmitState extends State<Submit> {
             value = value * 50 * 40;
             salary = value.toString();
           }else{
-            salary = salaryController.text;
+            salary = int.parse(salaryController.text);
           }
           var status = statusOption;
           var company = companyNameController.text;
-          var bonus = bonusController.text;
+          var bonus = int.parse(bonusController.text);
           var state = stateController.text;
           var year = schoolYear;
           var major = majorController.text;
@@ -274,10 +274,10 @@ class SubmitState extends State<Submit> {
             company = "No Company";
           }
           if(salaryController.text == ""){
-            salary = "No Salary";
+            salary = 0;
           }
           if(bonusController.text == ""){
-            bonus = "No Bonus";
+            bonus = 0;
           }
           if(stateController.text == ""){
             state = "No Location";
@@ -285,7 +285,7 @@ class SubmitState extends State<Submit> {
           if(schoolYear == ""){
             year = "No Year";
           }
-          Data temp = new Data(ItemID: randomAlpha(5), Company: company, Salary: salary, Bonus: bonus, Status: status, State: state, Year: year, Major: major);
+          Data temp = new Data(ItemID: randomBetween(0, 100000), Company: company, Salary: salary, Bonus: bonus, Status: status, State: state, Year: year, Major: major);
           var a = await createData(URL, temp);
           if (a != null){
             print("Success");

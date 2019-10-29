@@ -72,7 +72,7 @@ class DataViewState extends State<DataView> {
                           children: <Widget>[
                               RichText(
                                 text: TextSpan(
-                                  text: "Salary: \$" + data.Salary,
+                                  text: "Salary: \$" + data.Salary.toString(),
                                   style: TextStyle(fontSize: 15.0, color: Colors.black),
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -80,7 +80,7 @@ class DataViewState extends State<DataView> {
                               SizedBox(width: mq.size.height/60),
                               RichText(
                                 text: TextSpan(
-                                  text: "Bonus: \$" + data.Bonus,
+                                  text: "Bonus: \$" + data.Bonus.toString(),
                                   style: TextStyle(fontSize: 15.0, color: Colors.black),
                                 ),
                                 overflow: TextOverflow.ellipsis,

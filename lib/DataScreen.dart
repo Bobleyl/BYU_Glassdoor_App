@@ -15,7 +15,7 @@ class DataScreen extends StatefulWidget {
 class DataScreenState extends State<DataScreen> {
   DataScreenState();
 
-  var URL = "https://8j06torsic.execute-api.us-east-1.amazonaws.com/dev/glass/get";
+  var URL = "https://d23kwuyo38.execute-api.us-east-1.amazonaws.com/production/";
 
   String valueOption;
   List<String> valueOptions = [
