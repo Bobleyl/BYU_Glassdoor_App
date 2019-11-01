@@ -249,9 +249,9 @@ class SubmitState extends State<Submit> {
           var salary;
           if(salaryOption == "Hourly"){
             var temp = salaryController.text;
-            var value = double.parse(temp);
+            var value = int.parse(temp);
             value = value * 50 * 40;
-            salary = value.toString();
+            salary = value;
           }else{
             salary = int.parse(salaryController.text);
           }

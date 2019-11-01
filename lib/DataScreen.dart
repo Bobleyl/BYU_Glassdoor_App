@@ -126,44 +126,6 @@ class DataScreenState extends State<DataScreen> {
       appBar: AppBar(
         title: Text("Offers", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: new Text(
-                  "Filter Data",
-                  textAlign: TextAlign.center,
-                ),
-                content: popUp(),
-                actions: <Widget>[
-                  new MaterialButton(
-                    child: new Text("Save"),
-                    color: Colors.black,
-                    onPressed: () {
-                      setState(() {
-                        Navigator.of(context).pop();
-                      });
-                    },
-                  ),
-                  new MaterialButton(
-                    child: new Text("Close"),
-                    color: Colors.black,
-                    onPressed: () {
-                      setState(() {
-                        Navigator.of(context).pop();
-                      });
-                    },
-                  ),
-                ],
-              );
-            },
-          );
-        },
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(Icons.assignment, color: Colors.white,),
-      ),*/
       body: Container(
         color: Theme.of(context).primaryColor.withOpacity(.9),
         child: Column(
